@@ -7,9 +7,22 @@ def dice_game(dice_type):
     Returns:
 
     """
-    available_dices = ['D3', 'D4', 'D6', 'D8', 'D10', 'D12', 'D20', 'D100']
-    for dice in dice_type:
-        if dice in available_dices:
+    AVAILABLE_DICES = ['D3', 'D4', 'D6', 'D8', 'D10', 'D12', 'D20', 'D100']
+    dice_value = ''
+    # multiplier = ''
+    # modifier = ''
+    for dice in AVAILABLE_DICES:
+        if dice_type in AVAILABLE_DICES:
             multiplier, modifier = dice_type.split(dice)
-        else:
-            print('Provided value is incorrect!')
+        dice_value = int(dice_type[1:])
+    else:
+        print('Provided value is incorrect!')
+    return multiplier, modifier
+
+
+print(dice_game('D120 + 100'))
+
+# AVAILABLE_DICES = ['D3', 'D4', 'D6', 'D8', 'D10', 'D12', 'D20', 'D100']
+#
+# for dice in AVAILABLE_DICES:
+#     print(dice)
